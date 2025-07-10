@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Solar System</title>
+  <style>
+    body {
+  margin: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.solar-system {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, yellow, orange);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 30px yellow;
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px dashed #555;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.earth-orbit {
+  width: 200px;
+  height: 200px;
+  animation: rotate 10s linear infinite;
+}
+
+.earth {
+  width: 30px;
+  height: 30px;
+  background: blue;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.moon-orbit {
+  width: 60px;
+  height: 60px;
+  animation: rotate 3s linear infinite;
+}
+
+.moon {
+  width: 10px;
+  height: 10px;
+  background: lightgray;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="solar-system">
+    <div class="sun"></div>
+    <div class="orbit earth-orbit">
+      <div class="planet earth"></div>
+    </div>
+    <div class="orbit moon-orbit">
+      <div class="planet moon"></div>
+    </div>
+  </div>
+</body>
+</html>
